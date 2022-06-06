@@ -33,59 +33,51 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="13dp">
-                
-            <TextClock
+            android:padding="16dp">
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="4dp"
-                android:fontFamily="@*android:string/config_lightFontFamily"
-                android:textColor="?android:attr/colorAccent"
-                android:format12Hour="h:mm"
-                android:format24Hour="H:mm"
-                android:textSize="26sp" />
+                android:layout_height="wrap_content">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextClock
-                    android:id="@+id/time_view"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:fontFamily="@*android:string/config_lightFontFamily"
-                    android:format12Hour="h:mm"
-                    android:format24Hour="H:mm"
-                    android:textSize="0sp" />
-
-                <TextClock
-                    android:id="@+id/date_view"
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="4dp"
-                    android:layout_marginRight="8dp"
+                    android:layout_marginHorizontal="4dp"
+                    android:layout_alignParentStart="true" 
                     android:fontFamily="@*android:string/config_lightFontFamily"
-                    android:format12Hour="@string/date_format"
-                    android:format24Hour="@string/date_format"
-                    android:textSize="13sp" />
-                
-            <io.chaldeaprjkt.gamespace.widget.MemoryView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@*android:string/config_lightFontFamily"
-                android:layout_marginLeft="35dp"
-                android:textSize="13sp" />
+                    android:gravity="start|center_vertical"
+                    android:text="@string/settings_title"
+                    android:textSize="32sp" />
 
-           <io.chaldeaprjkt.gamespace.widget.BatteryView
-                android:id="@+id/battery_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@*android:string/config_lightFontFamily"
-                android:layout_marginLeft="4dp"
-                android:textSize="13sp" />
-                    
-            </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true" 
+                    android:gravity="end|center_vertical"
+                    android:orientation="vertical">
+
+                    <TextClock
+                        android:id="@+id/time_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="4dp"
+                        android:lineSpacingMultiplier="0.7"
+                        android:format12Hour="h:mm"
+                        android:format24Hour="kk:mm"
+                        android:textSize="16sp" />
+
+                    <TextClock
+                        android:id="@+id/date_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="4dp"
+                        android:lineSpacingMultiplier="0.7"
+                        android:format12Hour="EEE, d MMM"
+                        android:format24Hour="EEE, d MMM"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+            </RelativeLayout>
 
             <include layout="@layout/tiles" />
 
